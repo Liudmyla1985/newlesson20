@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="JSONPlaceholder Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">3</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">0</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">10</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">jsonplaceholder.typicode.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+
+        <!-- GET /posts/1 -->
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /posts/1" enabled="true">
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <stringProp name="HTTPSampler.path">/posts/1</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="GET Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Response Code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="GET Response Contains" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0">"id": 1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Response Text</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="GET JSON Path" enabled="true">
+            <stringProp name="JSONPath">$.userId</stringProp>
+            <boolProp name="JSONPathAssertion.validate">true</boolProp>
+            <boolProp name="JSONPathAssertion.invert">false</boolProp>
+          </JSONPathAssertion>
+        </hashTree>
+
+        <!-- POST /posts -->
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /posts" enabled="true">
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.path">/posts</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="body" elementType="HTTPArgument">
+                <stringProp name="Argument.value">{"title":"foo","body":"bar","userId":1}</stringProp>
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="POST Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0">201</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Response Code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="POST Response Contains" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0">"title":"foo"</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Response Text</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="POST JSON Path" enabled="true">
+            <stringProp name="JSONPath">$.id</stringProp>
+            <boolProp name="JSONPathAssertion.validate">true</boolProp>
+            <boolProp name="JSONPathAssertion.invert">false</boolProp>
+          </JSONPathAssertion>
+        </hashTree>
+
+        <!-- PUT /posts/1 -->
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT /posts/1" enabled="true">
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <stringProp name="HTTPSampler.path">/posts/1</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="body" elementType="HTTPArgument">
+                <stringProp name="Argument.value">{"id":1,"title":"updated title","body":"updated body","userId":1}</stringProp>
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="PUT Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Response Code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="PUT Response Contains" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0">"title":"updated title"</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Response Text</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="PUT JSON Path" enabled="true">
+            <stringProp name="JSONPath">$.id</stringProp>
+            <boolProp name="JSONPathAssertion.validate">true</boolProp>
+            <boolProp name="JSONPathAssertion.invert">false</boolProp>
+          </JSONPathAssertion>
+        </hashTree>
+
+        <!-- PATCH /posts/1 -->
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PATCH /posts/1" enabled="true">
+          <stringProp name="HTTPSampler.method">PATCH</stringProp>
+          <stringProp name="HTTPSampler.path">/posts/1</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="body" elementType="HTTPArgument">
+                <stringProp name="Argument.value">{"title":"patched title"}</stringProp>
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="PATCH Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Response Code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="PATCH Response Contains" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0">"title":"patched title"</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Response Text</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="PATCH JSON Path" enabled="true">
+            <stringProp name="JSONPath">$.id</stringProp>
+            <boolProp name="JSONPathAssertion.validate">true</boolProp>
+            <boolProp name="JSONPathAssertion.invert">false</boolProp>
+          </JSONPathAssertion>
+        </hashTree>
+
+        <!-- DELETE /posts/1 -->
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="DELETE /posts/1" enabled="true">
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <stringProp name="HTTPSampler.path">/posts/1</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="DELETE Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Response Code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="DELETE Response Empty" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Response Text</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="DELETE Response Size" enabled="true">
+            <stringProp name="SizeAssertion.size">100</stringProp>
+            <boolProp name="SizeAssertion.compare">true</boolProp>
+          </SizeAssertion>
+        </hashTree>
+
+        <!-- Listeners -->
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results in Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
