@@ -1,0 +1,178 @@
+{
+  "id": "8da19d60-c58e-4428-9fa4-19848f07b252",
+  "version": "2.0",
+  "name": "Checking the “Cards” menu",
+  "url": "https://next.privat24.ua",
+  "tests": [{
+    "id": "ee5d17dd-2278-4d52-9d73-d8b943961be1",
+    "name": "Checking the “Cards” menu",
+    "commands": [{
+      "id": "1c596e8d-5441-43c3-befa-13c7d58b1dbb",
+      "comment": "",
+      "command": "open",
+      "target": "https://next.privat24.ua/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f63be4d-5270-46de-bdd0-9f6b856e1896",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card_QQt3yaYPCi:nth-child(1) .content_mD1LpOYSJX",
+      "targets": [
+        ["css=.card_QQt3yaYPCi:nth-child(1) .content_mD1LpOYSJX", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f46db974-20c2-4d57-b3ae-d5ec13e36ecc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card_QQt3yaYPCi:nth-child(2) .number_ufMe6hpK5N > div",
+      "targets": [
+        ["css=.card_QQt3yaYPCi:nth-child(2) .number_ufMe6hpK5N > div", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div[2]/div/div/div/div[2]/div/div/div/div/div/div/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1319de61-90c9-41a6-92d5-8bf6337ea765",
+      "comment": "",
+      "command": "click",
+      "target": "css=.active_KbcEZ9Axwz .sc-cPiKLX",
+      "targets": [
+        ["css=.active_KbcEZ9Axwz .sc-cPiKLX", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div[2]/div/div/div/div[2]/div/div/div/div/div/div/div[3]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b02ebd71-064c-47f5-a88d-2a850bcff184",
+      "comment": "",
+      "command": "click",
+      "target": "css=.root_u_3cqpfyeG:nth-child(2) .clickable_PPO9YbGKqD",
+      "targets": [
+        ["css=.root_u_3cqpfyeG:nth-child(2) .clickable_PPO9YbGKqD", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div/div/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//section/div/div[2]/div/div/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2331e569-70b1-430a-9456-ad875771d133",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card_QQt3yaYPCi:nth-child(1) .content_mD1LpOYSJX > .row_GjYWhocMRy > div:nth-child(1)",
+      "targets": [
+        ["css=.card_QQt3yaYPCi:nth-child(1) .content_mD1LpOYSJX > .row_GjYWhocMRy > div:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div/div/div/div/div/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]/div/div/div/div/div/div/div/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23b354a2-981d-49a2-b83f-0c184f49ece1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.name_Ng0O3PUfCf",
+      "targets": [
+        ["css=.name_Ng0O3PUfCf", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]/div/div/div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2202182c-9dff-4614-979a-9149f693d81c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.root_u_3cqpfyeG:nth-child(3) .title_WiOyo23EOb",
+      "targets": [
+        ["css=.root_u_3cqpfyeG:nth-child(3) .title_WiOyo23EOb", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div/div/div/div[3]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a036a69-aafb-4e1d-9b96-e10bf8705fb2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.root_u_3cqpfyeG:nth-child(1) .sc-iGgWBj:nth-child(1) path:nth-child(1)",
+      "targets": [
+        ["css=.root_u_3cqpfyeG:nth-child(1) .sc-iGgWBj:nth-child(1) path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "26354831-2a14-4934-abe7-f95d5d2859a9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-lcIPJg:nth-child(1) > div:nth-child(2)",
+      "targets": [
+        ["css=.sc-lcIPJg:nth-child(1) > div:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div/div[2]/a/div[2]", "xpath:idRelative"],
+        ["xpath=//a/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e29663fd-c381-4359-8c6c-a10d5a39bd24",
+      "comment": "",
+      "command": "click",
+      "target": "css=.interactive_UKa_lZyGI2",
+      "targets": [
+        ["css=.interactive_UKa_lZyGI2", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div[2]/form/div[3]/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "617f9746-55e7-45ac-b81f-7b8d074688a2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.type_K4jPXaYRfK .sc-dGCmGc",
+      "targets": [
+        ["css=.type_K4jPXaYRfK .sc-dGCmGc", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div[2]/form/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b980740b-8f51-4ab9-96b3-acc20953fe4b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-jxOSlx .sc-bJBgwP:nth-child(4)",
+      "targets": [
+        ["css=.sc-jxOSlx .sc-bJBgwP:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div[2]/form/div[6]/div[2]/div/div/div[2]/label[2]", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/div[2]/label[2]", "xpath:position"],
+        ["xpath=//label[contains(.,'USD')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "58c808ff-f011-4cca-883d-ef56024e0c65",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-bJBgwP:nth-child(6)",
+      "targets": [
+        ["css=.sc-bJBgwP:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/section/div/div[2]/div[2]/form/div[6]/div[2]/div/div/div[2]/label[3]", "xpath:idRelative"],
+        ["xpath=//label[3]", "xpath:position"],
+        ["xpath=//label[contains(.,'EUR')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e5d78f4-d1ef-4a96-a58a-06148d1ab40a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=div:nth-child(6) .root_aW2zkcfPf0",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b0cb9bef-ae4e-48cd-be02-9571b9cdd0d2",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ee5d17dd-2278-4d52-9d73-d8b943961be1"]
+  }],
+  "urls": ["https://next.privat24.ua/"],
+  "plugins": []
+}
